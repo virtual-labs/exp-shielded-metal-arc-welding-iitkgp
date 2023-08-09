@@ -2,38 +2,84 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What does the acronym SMAW stand for?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Shielded Metal Arc Welding",
+        "b": "Shielded Magnetic Arc Welding",
+        "c": "Strong Magnetic Arc Welding",
+        "d": "Solid Metal Arc Welding"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What type of joint can be made using SMAW welding?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Butt joint",
+        "b": "Lap joint",
+        "c": "T-joint ",
+        "d": "All of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+  {
+      "question": "What type of electrode is used in SMAW welding?",
+      "answers": {
+        "a": "Flux-cored",
+        "b": "Stick",
+        "c": "Wire ",
+        "d": "Tungsten "
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+{
+      "question": "What type of power source is used in SMAW welding?  ",
+      "answers": {
+        "a": "DC",
+        "b": "AC ",
+        "c": "Both A & B",
+        "d": "None of the above "
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+{
+      "question": "What is the purpose of the flux coating on the electrode in SMAW welding? ",
+      "answers": {
+        "a": "To protect the weld from oxidation",
+        "b": "To provide a shielding gas",
+        "c": "To improve the mechanical properties of the weld",
+        "d": "All of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+{
+      "question": "What type of metal can be welded using SMAW?  ",
+      "answers": {
+        "a": "Steel",
+        "b": "Aluminium",
+        "c": "Copper",
+        "d": "All of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+{
+      "question": "What is the major advantage of SMAW welding?  ",
+      "answers": {
+        "a": "Speed",
+        "b": "Portability",
+        "c": "Automation",
+        "d": "All of the above"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
-  ]
+
+]
 }
+
+
