@@ -1,1 +1,13 @@
-### Procedure
+# Procedure
+- ***Before starting the process read the instructions completely***
+- Press ***Start button*** to start the experiment procedure.
+- Select the ***Type of Operation*** of your choice.
+- Select the ***Type of Joint***
+- Select the ***Type of Material***
+- Press **Start button** to start the process of welding.
+- Observe the simulation.
+    - ***Mouse Controls***
+        - Scroll for Zoom in and Zoom out
+        - Left click and move mouse to rotate
+        - Right click and move to move setup
+- Repeat the experiment
