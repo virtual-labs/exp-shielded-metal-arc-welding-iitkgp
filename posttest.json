@@ -1,0 +1,76 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the typical welding position used in Shielded metal arc welding?",
+      "answers": {
+        "a": "Flat",
+        "b": "Horizontal",
+        "c": "Vertical",
+        "d": "All of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+ {
+      "question": "What is the typical shielding gas used in Shielded metal arc welding?",
+      "answers": {
+        "a": "Argon",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "None of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+{
+      "question": "What is the purpose of the slag in Shielded Metal Arc Welding?",
+      "answers": {
+        "a": "To provide electrical conductivity",
+        "b": "To provide filler material for the weld",
+        "c": "To protect the weld from atmospheric contamination",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+{
+      "question": "How arc is generated in SMAW?",
+      "answers": {
+        "a": "By striking the electrode against the workpiece",
+        "b": "By using a non-consumable tungsten electrode",
+        "c": "By using a wire electrode",
+        "d": "Using a gas shield to ionize the air"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+{
+      "question": "How does the electrode coating affect the welding process in SMAW? ",
+      "answers": {
+        "a": "It determines the direction of the current flow",
+        "b": "It affects the melting rate and deposition rate of the electrode",
+        "c": "It determines the type of shielding gas used",
+        "d": "It has no effect on the welding process"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+{
+      "question": "Which of the following is not a type of electrode coating used in SMAW? ",
+      "answers": {
+        "a": "Rutile",
+        "b": "Calcium Fluoride",
+        "c": "Cellulose",
+        "d": "Nickel"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }
+]
+}
+
+
+
+
+
