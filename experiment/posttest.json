@@ -9,7 +9,7 @@
         "c": "Vertical",
         "d": "All of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",
@@ -26,7 +26,7 @@
         "c": "Oxygen",
         "d": "None of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",
@@ -43,7 +43,7 @@
         "c": "To protect the weld from atmospheric contamination",
         "d": "None of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"c\" is correct answer",
         "b":"Your are Wrong, Option \"c\" is correct answer",
         "c":"You are right",
@@ -60,7 +60,7 @@
         "c": "By using a wire electrode",
         "d": "Using a gas shield to ionize the air"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"You are right",
         "b":"Your are Wrong, Option \"a\" is correct answer",
         "c":"Your are Wrong, Option \"a\" is correct answer",
@@ -77,7 +77,7 @@
         "c": "It determines the type of shielding gas used",
         "d": "It has no effect on the welding process"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"b\" is correct answer",
         "b":"You are right",
         "c":"Your are Wrong, Option \"b\" is correct answer",
@@ -94,7 +94,7 @@
         "c": "Cellulose",
         "d": "Nickel"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",

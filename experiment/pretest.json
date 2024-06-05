@@ -9,7 +9,7 @@
         "c": "Strong Magnetic Arc Welding",
         "d": "Solid Metal Arc Welding"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"You are right",
         "b":"Your are Wrong, Option \"a\" is correct answer",
         "c":"Your are Wrong, Option \"a\" is correct answer",
@@ -26,7 +26,7 @@
         "c": "T-joint ",
         "d": "All of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",
@@ -43,7 +43,7 @@
         "c": "Wire ",
         "d": "Tungsten "
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"b\" is correct answer",
         "b":"You are right",
         "c":"Your are Wrong, Option \"b\" is correct answer",
@@ -60,7 +60,7 @@
         "c": "Both A & B",
         "d": "None of the above "
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"c\" is correct answer",
         "b":"Your are Wrong, Option \"c\" is correct answer",
         "c":"You are right",
@@ -77,7 +77,7 @@
         "c": "To improve the mechanical properties of the weld",
         "d": "All of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",
@@ -94,7 +94,7 @@
         "c": "Copper",
         "d": "All of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"d\" is correct answer",
         "b":"Your are Wrong, Option \"d\" is correct answer",
         "c":"Your are Wrong, Option \"d\" is correct answer",
@@ -111,7 +111,7 @@
         "c": "Automation",
         "d": "All of the above"
       },
-      "explainations":{ 
+      "explanations":{ 
         "a":"Your are Wrong, Option \"b\" is correct answer",
         "b":"You are right",
         "c":"Your are Wrong, Option \"b\" is correct answer",
