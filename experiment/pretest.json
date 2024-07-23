@@ -103,7 +103,7 @@
       "correctAnswer": "d",
       "difficulty": "beginner"
     },
-{
+    {
       "question": "What is the major advantage of SMAW welding?  ",
       "answers": {
         "a": "Speed",
@@ -119,8 +119,54 @@
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
+    },
+    {
+      "question": "During DC SMAW, which polarity concentrates more heat on the electrode",
+      "answers": {
+        "a": "Direct Current straight polarity",
+        "b": "Direct current reverse polarity",
+        "c": "Polarity does not matter"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What type of groove is constructed for vertical position welding?",
+      "answers": {
+        "a": "V shaped groove",
+        "b": " No groove",
+        "c": "U shaped groove"
+      },
+      "explanations": {
+        "a":"You are right",
+        "b":"Your are Wrong, Option \"a\" is correct answer",
+        "c":"Your are Wrong, Option \"a\" is correct answer"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following defect can result from using wet or damp electrode?",
+      "answers": {
+        "a": "Lack of fusion",
+        "b": "porosity",
+        "c": "slag inclusion",
+        "d": "Undercut"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
-
 ]
 }
 

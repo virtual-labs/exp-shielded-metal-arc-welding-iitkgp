@@ -102,8 +102,59 @@
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Chipping process after SMAW is done to",
+      "answers": {
+        "a": "remove residual stress",
+        "b": "Remove slag",
+        "c": "improves weld quality",
+        "d": "all of the above"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "which of the following type of materials can not be welded using SMAW technique?",
+      "answers": {
+        "a": "High melting point materials",
+        "b": "Low melting point materials",
+        "c": "high carbon steel",
+        "d": "all of the above"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In which of the following welding positions electrode is held at 45° to the workpiece?",
+      "answers": {
+        "a": "Horizontal position",
+        "b": "Vertical position",
+        "c": "Flat position",
+        "d": "Overhead position"
+      },
+      "explanations": {
+        "a":"You are right",
+        "b":"Your are Wrong, Option \"a\" is correct answer",
+        "c":"Your are Wrong, Option \"a\" is correct answer",
+        "d":"Your are Wrong, Option \"a\" is correct answer"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     }
-]
+  ]
 }
 
 
