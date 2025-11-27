@@ -9,6 +9,12 @@
         "c": "Vertical",
         "d": "All of the above"
       },
+      "explanations":{ 
+        "a":"Your are Wrong, Option \"d\" is correct answer",
+        "b":"Your are Wrong, Option \"d\" is correct answer",
+        "c":"Your are Wrong, Option \"d\" is correct answer",
+        "d":"You are right"
+      },
       "correctAnswer": "d",
       "difficulty": "beginner"
     },
@@ -19,6 +25,12 @@
         "b": "Carbon dioxide",
         "c": "Oxygen",
         "d": "None of the above"
+      },
+      "explanations":{ 
+        "a":"Your are Wrong, Option \"d\" is correct answer",
+        "b":"Your are Wrong, Option \"d\" is correct answer",
+        "c":"Your are Wrong, Option \"d\" is correct answer",
+        "d":"You are right"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
@@ -31,6 +43,12 @@
         "c": "To protect the weld from atmospheric contamination",
         "d": "None of the above"
       },
+      "explanations":{ 
+        "a":"Your are Wrong, Option \"c\" is correct answer",
+        "b":"Your are Wrong, Option \"c\" is correct answer",
+        "c":"You are right",
+        "d":"Your are Wrong, Option \"c\" is correct answer"
+      },
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
@@ -41,6 +59,12 @@
         "b": "By using a non-consumable tungsten electrode",
         "c": "By using a wire electrode",
         "d": "Using a gas shield to ionize the air"
+      },
+      "explanations":{ 
+        "a":"You are right",
+        "b":"Your are Wrong, Option \"a\" is correct answer",
+        "c":"Your are Wrong, Option \"a\" is correct answer",
+        "d":"Your are Wrong, Option \"a\" is correct answer"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
@@ -53,6 +77,12 @@
         "c": "It determines the type of shielding gas used",
         "d": "It has no effect on the welding process"
       },
+      "explanations":{ 
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
@@ -64,10 +94,67 @@
         "c": "Cellulose",
         "d": "Nickel"
       },
+      "explanations":{ 
+        "a":"Your are Wrong, Option \"d\" is correct answer",
+        "b":"Your are Wrong, Option \"d\" is correct answer",
+        "c":"Your are Wrong, Option \"d\" is correct answer",
+        "d":"You are right"
+      },
       "correctAnswer": "d",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Chipping process after SMAW is done to",
+      "answers": {
+        "a": "remove residual stress",
+        "b": "Remove slag",
+        "c": "improves weld quality",
+        "d": "all of the above"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "which of the following type of materials can not be welded using SMAW technique?",
+      "answers": {
+        "a": "High melting point materials",
+        "b": "Low melting point materials",
+        "c": "high carbon steel",
+        "d": "all of the above"
+      },
+      "explanations": {
+        "a":"Your are Wrong, Option \"b\" is correct answer",
+        "b":"You are right",
+        "c":"Your are Wrong, Option \"b\" is correct answer",
+        "d":"Your are Wrong, Option \"b\" is correct answer"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In which of the following welding positions electrode is held at 45° to the workpiece?",
+      "answers": {
+        "a": "Horizontal position",
+        "b": "Vertical position",
+        "c": "Flat position",
+        "d": "Overhead position"
+      },
+      "explanations": {
+        "a":"You are right",
+        "b":"Your are Wrong, Option \"a\" is correct answer",
+        "c":"Your are Wrong, Option \"a\" is correct answer",
+        "d":"Your are Wrong, Option \"a\" is correct answer"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     }
-]
+  ]
 }
 
 
