@@ -38,7 +38,7 @@ const scn=new THREE.Scene();
 const lgt=new THREE.PointLight(0xffffff, mn, mx);
 lgt.position.set(20, 20, 20);
 const cam=new THREE.PerspectiveCamera(45, sizs.wd / sizs.ht, mn, mx);
-cam.position.set(-5,1,2);
+cam.position.set(-4,2,2);
 scn.add(cam);            
 scn.add(lgt);
 
@@ -200,9 +200,16 @@ let i=0,j=0, k=sizs.wd / sizs.ht*0.0011, m=sizs.wd / sizs.ht*0.0019, adi=0;
 
 
 const loop = () => {
+    if(i==0){
+        scn.add(trnme);
+    setTimeout(function() {window.requestAnimationFrame(loop);},500)    
+    }
+    else    {
+        scn.add(trnme);
+        window.requestAnimationFrame(loop);
+    }
     rndr.render(scn,cam);
-    scn.add( trnme );
-    setTimeout(function() {window.requestAnimationFrame(loop);},500)
+    //setTimeout(function() {window.requestAnimationFrame(loop);},300)
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
         adit();
         trnme.position.set(-sizs.wd / sizs.ht*0.01, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.26-m*0.929); scn.add( trnme );
