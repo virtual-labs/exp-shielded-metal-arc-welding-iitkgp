@@ -1,0 +1,155 @@
+<!--
+ This HTML file is developed by
+Aditya Kameswara Rao Nandula
+Senior Project Scientist,
+Virtual Labs IIT Kharagpur.
+LinkedIn: https://in.linkedin.com/in/akraonandula/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title class="exn"></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./js/threejs/three.module.js",
+        "three/addons/": "./js/threejs/jsm/"
+      }
+    }
+    </script>
+    
+   <link href="./css/adiwe5.css" rel="stylesheet">
+  <link href="./css/adiwl3.css" rel="stylesheet">
+  <script src="./js/adi.js"></script>
+  
+  
+    
+</head>
+<body>
+  <body>
+    <div class="container p-3 my-3 text-primary text-center border">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div>
+            <div class="col-md-6">
+                <p class="display-3"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div>
+        </div>
+    
+  </div>
+    
+    
+    <div class="container p-3 my-5 text-left border">
+      <div class="row ">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <p class="text-center"> <h3 class=" my-5 text-primary"> Instructions: </h3>
+            <ol id="inst">
+              <li class="h5 text-secondary"> Before starting the process read the instructions completely</li>
+              <li>Press <b> Start</b> button to start the experiment procedure.</li>
+              <li>Select the <b> Type of Operation </b> of your choice.</li>
+              <li>Select the <b>Type of Joint</b></li>
+              <li>Select the <b>Type of Material</b></li>
+              <li>Press <b>Start</b> button to start the start the process of welding.</li>
+              <li>Observe the simulation.</li>
+                <ul>
+                 <strong> Mouse Controls</strong>
+                  <li> <b>Scroll</b> for Zoom in and Zoom out</li>
+                  <li> <b>Left click and move mouse</b> to rotate</li>
+                  <li> <b>Right click and move</b> to move setup</li>
+                </ul>
+              <li>Repeat the experiment</li>
+            </ol>
+          </p> 
+          
+
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div><br>
+
+    <div class="container p-3 my-5 border">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 ">
+              <ul class="nav nav-pills nav-justified " role="tablist">
+              <li class="nav-item bg-success">
+                  <a class="nav-link" data-bs-toggle="tab" href="#Strt" onclick="$('#inst').hide();"><span class=" h3 text-dark"> Start </span></a>
+              </li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <li class="nav-item bg-danger">
+                  <a class="nav-link" data-bs-toggle="tab" href="#" onclick="window.location.reload();"><span class=" h3 text-dark"> Stop </span></a>
+              </li>
+              </ul><br>
+              <div class="tab-content"><br>
+                  <div id="Strt" class=" p-3 tab-pane"><br><ul class="nav nav-pills nav-justified " role="tablist">
+                      <div class="row btn-group p-1 align-items-center text-center"><br>
+                        <div class="col p-3 border nav-item rounded rounded-3"> <span class="h5 text-primary">Type of operation</span> <br>
+                          <button type="button" class="  rounded-5 btn btn-primary rounded rounded-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tj"><span class="h6 text-white"> Shielded Metal Arc Welding </span></a>
+                          </button>
+                        </div> &nbsp; &nbsp;
+                        <div id="tj" class="col nav-item p-3 border rounded rounded-3 fade"> <span class="h5 text-primary">Type of Joint</span> <br>
+                          <button type="button" class="  rounded rounded-5 btn btn-primary rounded rounded-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tm"><span class="h6 text-white"> Butt Joint </span></a>
+                          </button>
+                        </div> &nbsp; &nbsp;
+                        <div id="tm" class="col nav-item p-3 border rounded rounded-3 fade"> <span class="h5 text-primary">Type of Material</span> <br>
+                          <button type="button" class="  rounded rounded-5 btn btn-primary rounded rounded-5">
+                            <a class="nav-link" data-bs-toggle="tab" href="#pstr"><span class="h6 text-white"> Mild Steel </span></a>
+                          </button>
+                        </div>
+                        &nbsp; &nbsp;
+                        <div id="pstr" class="col nav-item p-3 border rounded rounded-3 fade">
+                          <button type="button" class="  rounded rounded-5 btn btn-primary rounded rounded-5">
+                            <a class="nav-link" data-bs-toggle="tab" onclick="aditya()"><span class="h6 text-white"> Start </span></a>
+                          </button>
+                        </div>
+                      </div>
+                      </ul>
+                   </div>
+                  </div>
+                </div>
+        <div class="col-md-1"></div>
+      
+    </div>
+    </div>
+  </div>
+  <script type="module" src="./js/adismaw.js"></script> 
+  <div id="adisim" class="row text-center p-2">
+    <div class="col">
+      <canvas id="smaw" class=" border border-5 border-primary rounded rounded-5">Aditya</canvas>
+    </div>
+  </div>
+  
+    <div class="container p-3 my-5 text-primary text-center border">
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div>
+ 
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
