@@ -202,7 +202,7 @@ let i=0,j=0, k=sizs.wd / sizs.ht*0.0011, m=sizs.wd / sizs.ht*0.0019, adi=0;
 const loop = () => {
     rndr.render(scn,cam);
     scn.add( trnme );
-    window.requestAnimationFrame(loop);
+    setTimeout(function() {window.requestAnimationFrame(loop);},500)
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
         adit();
         trnme.position.set(-sizs.wd / sizs.ht*0.01, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.26-m*0.929); scn.add( trnme );
