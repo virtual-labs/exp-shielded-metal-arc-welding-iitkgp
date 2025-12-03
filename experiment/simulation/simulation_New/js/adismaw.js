@@ -36,9 +36,9 @@ window.addEventListener("resize",()=>{
 const stldr = new STLLoader();
 const scn=new THREE.Scene();
 const lgt=new THREE.PointLight(0xffffff, mn, mx);
-lgt.position.set(20, 20, 20);
-const cam=new THREE.PerspectiveCamera(45, sizs.wd / sizs.ht, mn, mx);
-cam.position.set(-4,2,2);
+lgt.position.set(0, 0, 0);
+const cam=new THREE.PerspectiveCamera(60, sizs.wd / sizs.ht, mn, mx);
+cam.position.set(-1.5,1.0,1.0);
 scn.add(cam);            
 scn.add(lgt);
 
@@ -50,11 +50,11 @@ rndr.render(scn,cam);
 
 const ctr = new OrbitControls(cam, cnvs);
 
-
 stldr.load( './images/wldma.stl', function ( act ) {
     const actma = new THREE.MeshBasicMaterial( { opacity: act.alpha, vertexColors: true } );
     actme = new THREE.Mesh( act, actma );
-	scn.add( actme );
+    actme.name="Welding Power Source";
+	scn.add(actme);
     actme.position.set( sizs.wd / sizs.ht*2, sizs.wd / sizs.ht*0.5, 0 );
     actme.rotation.set( -Math.PI/2, 0, 0 );
     actme.scale.set(l*1.2, b*1.2, h*1.2 );
@@ -66,10 +66,81 @@ stldr.load( './images/wldma.stl', function ( act ) {
 	//console.error( error );
 
 } );
+
+
+let actLabelSprite = null;
+let actArrow = null;
+
+function crtlbl(text,fnt) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 128;
+    const ctx = canvas.getContext('2d');
+
+    // background
+    //ctx.fillStyle = 'rgba(0,0,0,0.65)';
+    //ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // text
+    ctx.font =  fnt+'px Arial';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.needsUpdate = true;
+    return tex;
+}
+
+function crtar(objprt,objnm) {
+    if (!objprt) return;
+    const nameText = objnm;
+    const tex = crtlbl(nameText,14);
+    const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    actLabelSprite = new THREE.Sprite(mat);
+
+    const upOffset = new THREE.Vector3(0, (sizs.wd / sizs.ht) * 0.45, 0);
+    actLabelSprite.position.copy(objprt.position).add(upOffset);
+
+    const baseScale = (sizs.wd / sizs.ht) * 0.8;
+    actLabelSprite.scale.set(baseScale * 2.2, baseScale * 0.6, 1);
+
+    scn.add(actLabelSprite);
+
+    const dir = new THREE.Vector3().subVectors(objprt.position, actLabelSprite.position).normalize();
+    const length = actLabelSprite.position.distanceTo(objprt.position);
+    const headLength = (sizs.wd / sizs.ht) * 0.03;
+    const headWidth = (sizs.wd / sizs.ht) * 0.15;
+    actArrow = new THREE.ArrowHelper(dir, actLabelSprite.position.clone(), length, 0xffcc00, headLength, headWidth);
+    scn.add(actArrow);
+
+    return [actLabelSprite, actArrow];
+}
+
+const pwrlbl = setInterval(() => {
+    if (!actme) return;
+    const lbar=crtar(actme,"Welding Power Source");
+    
+    if (actLabelSprite && actArrow) {
+        const upOffset = new THREE.Vector3(0, (sizs.wd / sizs.ht) * 0.45, 0);
+        const labelPos = actme.position.clone().add(upOffset);
+        lbar[0].position.copy(labelPos);
+
+        const dir = new THREE.Vector3().subVectors(actme.position, labelPos).normalize();
+        const length = labelPos.distanceTo(actme.position);
+        lbar[1].position.copy(labelPos);
+        lbar[1].setDirection(dir);
+        lbar[1].setLength(length*0.8, (sizs.wd / sizs.ht) * 0.03, (sizs.wd / sizs.ht) * 0.02);
+    }
+}, 100);
+
+
 let ml='./images/wrkpclmp.stl';
 stldr.load(ml, function ( mld ) {
     const mldma = new THREE.MeshMatcapMaterial( { opacity: mld.alpha, vertexColors: true } );
     mldme = new THREE.Mesh( mld, mldma );
+    mldme.name ="Clamp";
 	scn.add( mldme );
     mldme.rotation.set( -Math.PI / 2, 0, Math.PI/1.2*0 );
     mldme.position.set( sizs.wd / sizs.ht*0.19 , -sizs.wd / sizs.ht*0, sizs.wd / sizs.ht*0.34 );
@@ -83,11 +154,45 @@ stldr.load(ml, function ( mld ) {
 
 } );
 
+const clmplbl = setInterval(() => {
+    if (!mldme) return;
+    const lbar=crtar(mldme,"Clamp");
+    
+    if (actLabelSprite && actArrow) {
+        const upOffset = new THREE.Vector3(0.55, (sizs.wd / sizs.ht) * 0.25, 0);
+        const labelPos = mldme.position.clone().add(upOffset);
+        lbar[0].position.copy(labelPos);
+
+        const dir = new THREE.Vector3().subVectors(mldme.position, labelPos).normalize();
+        const length = labelPos.distanceTo(mldme.position);
+        lbar[1].position.copy(labelPos);
+        lbar[1].setDirection(dir);
+        lbar[1].setLength(length*0.8, (sizs.wd / sizs.ht) * 0.03, (sizs.wd / sizs.ht) * 0.02);
+    }
+}, 100);
+
+const bsmtlbl = setInterval(() => {
+    if (!mldme) return;
+    const lbar=crtar(mldme,"Base Material");
+    
+    if (lbar[0] &&  lbar[1]) {
+        const upOffset = new THREE.Vector3(-1.5, (sizs.wd / sizs.ht) * 0.15, 0);
+        const labelPos = mldme.position.clone().add(upOffset);
+        lbar[0].position.copy(labelPos);
+        const upof = new THREE.Vector3(-0.25, 0, 0);
+        const dir = new THREE.Vector3().subVectors(mldme.position, labelPos).normalize();
+        const length = labelPos.distanceTo(mldme.position);
+        lbar[1].position.copy(labelPos).add(upof);
+        lbar[1].setDirection(dir);
+        lbar[1].setLength(length*0.8, (sizs.wd / sizs.ht) * 0.03, (sizs.wd / sizs.ht) * 0.02);
+    }
+}, 100);
 
 const tr='./images/Elcthldr.stl';
 stldr.load(tr, function ( trn ) {
     const trnma = new THREE.MeshMatcapMaterial( { opacity: trn.alpha, vertexColors: true } );
     trnme = new THREE.Mesh( trn, trnma );
+    trnme.name='Electrode Holder';
 	scn.add( trnme );
     trnme.rotation.set( Math.PI, Math.PI/2, Math.PI/2 );
     trnme.position.set(-sizs.wd / sizs.ht*0.01, sizs.wd / sizs.ht*0.25, sizs.wd / sizs.ht*0.26);
@@ -100,6 +205,31 @@ stldr.load(tr, function ( trn ) {
 	//console.error( error );
 
 } );
+
+let ecblsprt = null;
+let ecblarw = null;
+let ecblof = null;
+
+const eclbl = setInterval(() => {
+    if (!trnme) return;
+    if (ecblsprt || ecblarw) {return;}
+    else
+    {const lbar=crtar(trnme,"Electrode Holder");
+    ecblsprt=lbar[0];
+    ecblarw=lbar[1];
+    if (lbar[0] &&  lbar[1]) {
+        let upOffset = new THREE.Vector3(0, (sizs.wd / sizs.ht) * 0.45, 0);
+        ecblof=upOffset;
+        let labelPos = trnme.position.clone().add(upOffset);
+        lbar[0].position.copy(labelPos);
+        let dir = new THREE.Vector3().subVectors(trnme.position, labelPos).normalize();
+        let length = labelPos.distanceTo(trnme.position);
+        lbar[1].position.copy(labelPos);
+        lbar[1].setDirection(dir);
+        lbar[1].setLength(length*0.98, (sizs.wd / sizs.ht) * 0.03, (sizs.wd / sizs.ht) * 0.02);
+    }}
+}, 100);
+
 
 const ar='./images/arc.stl';
 stldr.load(ar, function ( arn ) {
@@ -129,10 +259,46 @@ wrv1.scale.set(l*8,b*8,h*8);
 const wr = new THREE.CylinderGeometry(1,1,22,16);
 const wrm = new THREE.MeshMatcapMaterial( {color: '#5a6977'} );
 const wrv = new THREE.Mesh( wr, wrm );
+wrv.name="Welding Electrode";
 wrv.rotation.set( -Math.PI/8*1, Math.PI*0, Math.PI/2*0);
 wrv.position.set(sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.13, sizs.wd / sizs.ht*0.375);
 wrv.scale.set(l*8,b*8,h*8);
 //scn.add(wrv);
+
+let wrvsprt = null;
+let wrvarw = null;
+let wrvof = null;
+
+const wrvlbl = setInterval(() => {
+    if (!wrv) return;
+    if (wrvsprt || wrvarw) {return;}
+    else
+    {const lbar=crtar(wrv,"Welding Electrode");
+    wrvsprt=lbar[0];
+    wrvarw=lbar[1];
+    if (lbar[0] &&  lbar[1]) {
+        let upOffset = new THREE.Vector3(-0.45, (sizs.wd / sizs.ht) * 0.35, 0);
+        wrvof=upOffset;
+        let labelPos = wrv.position.clone().add(upOffset);
+        lbar[0].position.copy(labelPos);
+        let dir = new THREE.Vector3().subVectors(wrv.position, labelPos).normalize();
+        let length = labelPos.distanceTo(wrv.position);
+        lbar[1].position.copy(labelPos);
+        lbar[1].setDirection(dir);
+        lbar[1].setLength(length*0.98, (sizs.wd / sizs.ht) * 0.03, (sizs.wd / sizs.ht) * 0.02);
+    }}
+}, 100);
+
+
+
+window.addEventListener('beforeunload', () => {
+    clearInterval(pwrlbl);
+    clearInterval(clmplbl);
+    clearInterval(bsmtlbl);
+    clearInterval(eclbl);
+    clearInterval(wrvlbl);
+});
+
 
 const grp= new THREE.Group();
 grp.add(wrv1);
@@ -213,21 +379,23 @@ const loop = () => {
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
         adit();
         trnme.position.set(-sizs.wd / sizs.ht*0.01, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.26-m*0.929); scn.add( trnme );
+        lblupd(trnme,ecblsprt,ecblarw,ecblof);
         wrv1.position.set(sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.24-k*0.14, sizs.wd / sizs.ht*0.33-m*0.929);
         wrv.position.set(sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.13-k*0.008, sizs.wd / sizs.ht*0.375-m*0.9929);
         wrv.scale.set(l*8,b*(8-k*4.8),h*8);
+        lblupd(wrv,wrvsprt,wrvarw,wrvof);
         arnme.position.set(-sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.50-m);
-let crvo = new THREE.CatmullRomCurve3( [
-	new THREE.Vector3( sizs.wd / sizs.ht*2, sizs.wd / sizs.ht*0.29, -sizs.wd / sizs.ht*0.14 ),
-    new THREE.Vector3( sizs.wd / sizs.ht*1.85, sizs.wd / sizs.ht*0.29, -sizs.wd / sizs.ht*0.14 ),
-    new THREE.Vector3( 0, 0, -sizs.wd / sizs.ht*0.3-m*0.9 ),
-    new THREE.Vector3( -sizs.wd / sizs.ht*0.0, sizs.wd / sizs.ht*0.22-k*0.14, -sizs.wd / sizs.ht*0.14-m),
-    new THREE.Vector3( -sizs.wd / sizs.ht*0.011, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.14-m)
-] );
-scn.add( trnme );
-scn.remove(mshtuo);
-mshtuo.geometry= new THREE.TubeGeometry( crvo, 64, sizs.wd / sizs.ht*0.015, 16, false );
-scn.add(mshtuo);
+    let crvo = new THREE.CatmullRomCurve3( [
+        new THREE.Vector3( sizs.wd / sizs.ht*2, sizs.wd / sizs.ht*0.29, -sizs.wd / sizs.ht*0.14 ),
+        new THREE.Vector3( sizs.wd / sizs.ht*1.85, sizs.wd / sizs.ht*0.29, -sizs.wd / sizs.ht*0.14 ),
+        new THREE.Vector3( 0, 0, -sizs.wd / sizs.ht*0.3-m*0.9 ),
+        new THREE.Vector3( -sizs.wd / sizs.ht*0.0, sizs.wd / sizs.ht*0.22-k*0.14, -sizs.wd / sizs.ht*0.14-m),
+        new THREE.Vector3( -sizs.wd / sizs.ht*0.011, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.14-m)
+    ] );
+    scn.add( trnme );
+    scn.remove(mshtuo);
+    mshtuo.geometry= new THREE.TubeGeometry( crvo, 64, sizs.wd / sizs.ht*0.015, 16, false );
+    scn.add(mshtuo);
     k+=sizs.wd / sizs.ht*0.0011;
     m+=sizs.wd / sizs.ht*0.0009;
 
@@ -237,7 +405,7 @@ scn.add(mshtuo);
         depth: -j/100,
         bevelEnabled: false
     };
-   fill.geometry= new THREE.ExtrudeGeometry( wbv, extset );
+    fill.geometry= new THREE.ExtrudeGeometry( wbv, extset );
     j=j+0.793;
     rndr.render(scn,cam);
     console.clear();
@@ -275,6 +443,13 @@ const adit = () => {
                     aud.stop();
                 }, 1000);
         };
+function lblupd(objprt,sprt,arw,upof){
+    if (!objprt || !sprt || !arw) return;
+        const lblps = objprt.position.clone().add(upof);
+        sprt.position.copy(lblps);
+        arw.position.copy(lblps);
+}
+
 loop();
 }
 
