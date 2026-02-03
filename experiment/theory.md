@@ -31,6 +31,85 @@ This welding process can be used to join metals in a variety of welding position
 3.	***Vertical Position:*** This position involves welding on a vertical surface with the axis of the electrode perpendicular to the workpiece. In this position, the molten metal tends to flow downwards, creating a "V" shaped groove. The direction of welding can be either uphill or downhill, depending on the joint design and welding parameters.
 4.	***Overhead Position:*** This position involves welding on the underside of a horizontal surface. It is the most difficult welding position in SMAW because the molten metal tends to sag and fall off the joint. A smaller diameter electrode is typically used in this position to reduce the heat input and prevent the molten metal from sagging.
 
+
+## Polarity in SMAW
+The polarity used depends on the electrode and desired weld characteristics.
+1. Direct Current Electrode Positive (DCEP / Reverse Polarity)
+    - Electrode → positive (+) terminal
+    - Produces deeper penetration
+    - More heat at the electrode tip
+    - Used for many structural and low-hydrogen electrodes (e.g., E7018)
+2. Direct Current Electrode Negative (DCEN / Straight Polarity)
+    - Electrode → negative (–) terminal
+    - Higher deposition rate, lower penetration
+    - Used for special electrodes like E7014 (in some cases)
+3. Alternating Current (AC)
+    - Electrode can be connected to any terminal
+    - Used for welding magnetized workpieces
+    - Low-cost and widely available
+    - Suitable for E6013, E7014, and some E7018 electrodes
+
+## Types of Flux Coatings in SMAW Electrodes
+The electrode coating determines arc characteristics, slag behavior, and weld quality. SMAW electrodes are classified based on the chemical composition of the flux coating.
+
+1. Rutile (Titania-Based) Coating
+    - Smooth, stable arc
+    - Easy slag removal
+    - Good weld appearance
+    - Suitable for AC and DC
+    - Example: E6013
+2. Cellulosic Coating
+    - High CO and H₂ gas generation
+    - Deep penetration
+    - Excellent for vertical-down welding and pipelines
+    - Fast-freezing slag
+    - Examples: E6010, E6011
+3. Basic (Low-Hydrogen) Coating
+    - Coating contains CaCO₃, CaF₂
+    - Produces low hydrogen content → reduces hydrogen cracking
+    - Strong and ductile welds
+    - Requires baking before use
+    - Example: E7018
+4. Iron Powder Electrodes
+    - Contain iron powder to increase deposition rate
+    - Higher productivity
+    - Used for fillet welds in flat/horizontal position
+    - Examples: E7014, E7024
+________________________________________
+## Different types of Electrodes used in SMAW
+Electrodes are classified by AWS based on tensile strength, welding position, and coating type.
+1. E6010
+    - Cellulosic coating
+    - Deep penetration
+    - Suitable for root passes, pipes
+    - DC only
+2. E6011
+    - Cellulosic coating
+    - Deep penetration
+    - AC or DC
+    - Good for rusty or contaminated surfaces
+3. E6013
+    - Rutile coating
+    - Smooth arc, easy slag removal
+    - Good for sheet metal
+    - AC or DC
+4. E7018
+    - Low-hydrogen basic coating
+    - Strong, ductile welds
+    - Used in structural and pressure vessels
+    - Requires electrode baking
+    - AC or DC+
+5. E7014
+    - Iron-powder rutile coating
+    - Higher deposition rate
+    - Suitable for fillet welds
+    - AC or DC
+6. E7024
+    - High iron powder content
+    - Very high deposition rate
+    - Used for flat/horizontal welding
+
+
 ## Process parameters:
 - ***Electrode diameter:*** the diameter of the electrode is an essential factor in SMAW. A larger diameter electrode increases the current carrying capacity of the arc and also increases the heat input. The correct electrode diameter should be selected based on the thickness of the material to be welded and the current settings.
 -	***Electrode type:*** The choice of electrode type is vital for SMAW. An electrode with a low-hydrogen core wire and an appropriate flux coating should be selected for the application. Low hydrogen electrodes reduce the risk of hydrogen cracking in the weld.
@@ -67,8 +146,8 @@ This welding process can be used to join metals in a variety of welding position
 4.	The method is adaptable and can be used for various joint types and welding positions.
 5.	The method is appropriate for the majority of regularly used metals and alloys.
 
-## Disadvantages:
-1.	Shielded metal arc welding does not require welding metals with low melting temperatures, such as lead, tin, and zinc, and their alloys.
+## Limitations:
+1.	Shielded metal arc welding is not suitable for metals with low melting temperatures, such as lead, tin, and zinc, and their alloys.
 2.	The heat generated within the SMAW electrode will be excessive if the current is too high.
 3.	Stub loss is also a drawback of shielded metal arc welding.
 4.	The weld bead appearance produced by SMAW can be irregular and unattractive, making it less suitable for cosmetic applications.
