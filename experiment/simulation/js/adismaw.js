@@ -17,10 +17,10 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 function aditya(){
 const mn=0.0001;
 const mx=100;
-var actme, oxyme, mldme, trnme, arnme;
+let actme, mldme, trnme, arnme;
 const sizs={
-    wd:window.innerWidth*0.5,
-    ht:window.innerHeight*0.5
+    wd:window.innerWidth*0.65,
+    ht:window.innerHeight*0.65
 };
 let l=(sizs.wd / sizs.ht /1000).toFixed(4);
 let b=(sizs.wd / sizs.ht /1000).toFixed(4);
@@ -54,10 +54,12 @@ stldr.load( './images/wldma.stl', function ( act ) {
     const actma = new THREE.MeshBasicMaterial( { opacity: act.alpha, vertexColors: true } );
     actme = new THREE.Mesh( act, actma );
     actme.name="Welding Power Source";
-	scn.add(actme);
+    scn.add(actme);
+    //actme.material.color.set('#3a64ee');
     actme.position.set( sizs.wd / sizs.ht*2, sizs.wd / sizs.ht*0.5, 0 );
     actme.rotation.set( -Math.PI/2, 0, 0 );
-    actme.scale.set(l*1.2, b*1.2, h*1.2 );
+    //actme.scale.set(l*1000, b*1000, h*1000 );
+    actme.scale.set(l*0.115, b*0.115, h*0.115 );
     actme.castShadow = true;
     actme.receiveShadow = true;
 
@@ -66,7 +68,8 @@ stldr.load( './images/wldma.stl', function ( act ) {
 	//console.error( error );
 
 } );
-
+scn.add(actme);
+rndr.render(scn,cam);
 
 let actLabelSprite = null;
 let actArrow = null;
@@ -96,7 +99,7 @@ function crtlbl(text,fnt) {
 function crtar(objprt,objnm) {
     if (!objprt) return;
     const nameText = objnm;
-    const tex = crtlbl(nameText,14);
+    const tex = crtlbl(nameText,12);
     const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
     actLabelSprite = new THREE.Sprite(mat);
 
@@ -368,23 +371,48 @@ adldr.load('./images/Wldsd.mp3', (buffer) => {
     aud.setBuffer(buffer);
 });
 
+const adit = (x) => {
+            aud.playbackRate = 2.5;
+            if(x==1){
+                aud.play();}
+                else if(x==0){
+                    aud.stop();
+                }
+        };
+
+        
+function lblupd(objprt,sprt,arw,upof){
+    if (!objprt || !sprt || !arw) return;
+        const lblps = objprt.position.clone().add(upof);
+        sprt.position.copy(lblps);
+        arw.position.copy(lblps);
+}
+
+
 
 let i=0,j=0, k=sizs.wd / sizs.ht*0.0011, m=sizs.wd / sizs.ht*0.0019, adi=0;
 
 
 const loop = () => {
+    console.clear();
     if(i==0){
+        scn.add(actme);
         scn.add(trnme);
+        scn.add(mldme);
+        rndr.render(scn,cam);
     setTimeout(function() {window.requestAnimationFrame(loop);},500)    
-    }
+}
     else    {
         scn.add(trnme);
+        scn.add(actme);
+        scn.add(mldme);
+        rndr.render(scn,cam);
+        adit(1);
         window.requestAnimationFrame(loop);
     }
     rndr.render(scn,cam);
-    //setTimeout(function() {window.requestAnimationFrame(loop);},300)
+    if(actme && trnme && mldme && arnme && wrv ){ 
     if(i<= ((sizs.wd / sizs.ht)*0.525)){
-        adit();
         trnme.position.set(-sizs.wd / sizs.ht*0.01, sizs.wd / sizs.ht*0.25-k*0.14, sizs.wd / sizs.ht*0.26-m*0.929); scn.add( trnme );
         lblupd(trnme,ecblsprt,ecblarw,ecblof);
         wrv1.position.set(sizs.wd / sizs.ht*0.00, sizs.wd / sizs.ht*0.24-k*0.14, sizs.wd / sizs.ht*0.33-m*0.929);
@@ -418,8 +446,9 @@ const loop = () => {
     console.clear();
     }
     else{
+        adit(0);
         if(adi==0){
-            scn.add( trnme );
+            scn.add(trnme);
             scn.remove(fill);
             scn.remove(arnme);
             scn.remove(mldme);
@@ -443,20 +472,9 @@ const loop = () => {
         }
     }
 }
-const adit = () => {
-            aud.playbackRate = 2.0;
-                aud.play();
-                setTimeout(() => {
-                    aud.stop();
-                }, 1000);
-        };
-function lblupd(objprt,sprt,arw,upof){
-    if (!objprt || !sprt || !arw) return;
-        const lblps = objprt.position.clone().add(upof);
-        sprt.position.copy(lblps);
-        arw.position.copy(lblps);
 }
 
+console.clear();
 loop();
 }
 
