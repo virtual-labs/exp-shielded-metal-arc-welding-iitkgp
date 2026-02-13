@@ -59,7 +59,7 @@ stldr.load( './images/wldma.stl', function ( act ) {
     actme.position.set( sizs.wd / sizs.ht*2, sizs.wd / sizs.ht*0.5, 0 );
     actme.rotation.set( -Math.PI/2, 0, 0 );
     //actme.scale.set(l*1000, b*1000, h*1000 );
-    actme.scale.set(l*0.115, b*0.115, h*0.115 );
+    actme.scale.set(l*115, b*115, h*115 );
     actme.castShadow = true;
     actme.receiveShadow = true;
 
