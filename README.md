@@ -4,7 +4,7 @@
 <b>Discipline | <b> Mechanical Engineerig
 :--|:--|
 <b> Lab | <b> Welding Lab
-<b> Experiment|     <b> Principles of Shielded Metal Arc Welding and Experiment 4
+<b> Experiment|     <b> Principles of Shielded Metal Arc Welding and Experiment 2
 
 ### About the Experiment 
 
